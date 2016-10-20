@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Todo App</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+		<link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+		<link rel="stylesheet" href="css/estilos.css" type="text/css">
+	</head>
+	<body>
+		<section><!--inicio seccion agregar tarea-->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 col-md-12">
+						<div class="panel panel-success">
+							<div class="panel-heading">
+								<h2 class="text-center">TODO APP</h2>
+							</div>
+							<div class="panel-body">
+								<form id="txt-tarea">
+									<label for="tarea"></label>
+									<textarea class="form-control" id="tarea" cols="5" rows="5" placeholder="Añade una nueva tarea"></textarea>	
+									<button class="btn btn-info" type="button" onclick="agregarText()"><span class="fa fa-plus" aria-hidden="true"></span> Agregar</button>
+								</form>	
+							</div>
+						</div>
+					</div>
+				</div>
+			</div><!--fin seccion agregar tarea-->
+		<section><!--inicio seccion tareas agregadas-->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-xs-12 col-md-12">
+						<div class="checkbox" id="agregarText">
+							<!-- <label><ul class="list-group" ></ul></label> -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</section><!--fin seccion tareas agregadas-->
+		<script src="js/evento.js"></script>
+	</body>
+</html>
