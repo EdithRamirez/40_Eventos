@@ -4,6 +4,24 @@ textarea {
 button{
 	margin-top: 2%;
 }
-/*.posicion{
-	position: fixed;
-}*/
+.gris{
+	background: #DCDCDC;
+	margin-top: 1%;
+	padding: 1%;
+}
+.linea{
+	text-decoration: line-through;
+}
+.rojo{
+	color: #B22222;
+}
+@media (min-width: 400px) and (max-width: 659px) {
+	body{
+		padding-top: 60%;
+	}
+}
+@media (min-width: 700px) and (max-width: 1024px) {
+	body{
+		padding-top: 25%;
+	}
+}
