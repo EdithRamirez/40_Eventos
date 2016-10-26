@@ -18,7 +18,9 @@ function agregarLista(){
 	divCaja.setAttribute("class","caja")
 	divCaja.appendChild(inputNombre);
 	divCaja.appendChild(btnEnviar);
-	lista.appendChild(divCaja);
+	// lista.appendChild(divCaja);
+
+	lista.insertBefore(divCaja,btnAgregar);
 
 	//llama a la funcion agregarTarjeta cuando se da click en el boton
 	btnEnviar.addEventListener("click",agregarTarjeta);	
@@ -30,7 +32,7 @@ function agregarLista(){
 			//elimina el input y el boton
 			inputNombre.parentNode.removeChild(inputNombre);
 			btnEnviar.parentNode.removeChild(btnEnviar);
-			
+			//Guarda el valor del input en un h4
 			var titulo = document.createElement("h4");
 			titulo.innerHTML = inputNombre.value;
 
@@ -42,26 +44,29 @@ function agregarLista(){
 			btnTarjeta.setAttribute("value","Añadir tarjeta...")
 			divCaja.appendChild(btnTarjeta);
 
-			
 			btnTarjeta.addEventListener("click",crearTarjeta);
 			
 			function crearTarjeta(){
 
 				var txtTarjeta = document.createElement("textarea");
+				txtTarjeta.setAttribute("placeholder","Añadir tarjeta...");
+				txtTarjeta.setAttribute("class","tarjeta");
+
 				var btnAnadir = document.createElement("button");
 				btnAnadir.setAttribute("type","button");
 				btnAnadir.setAttribute("class","btn btn-success");
 				btnAnadir.textContent = "Añadir";
-				divCaja.appendChild(txtTarjeta);
-				divCaja.appendChild(btnAnadir);
+
+				divCaja.insertBefore(txtTarjeta,btnTarjeta);
+				divCaja.insertBefore(btnAnadir,btnTarjeta);
 				//aqui debe guardar la tarjeta
 				btnAnadir.addEventListener("click",anadirTarjeta);
 				function anadirTarjeta(){	
-					var tarea = document.createElement("p");
-					tarea.innerHTML = txtTarjeta.value;
-					txtTarjeta.setAttribute("class","");
-					divCaja.appendChild(tarea);
-					txtTarjeta.value = "";
+					if(txtTarjeta.value == ""||txtTarjeta.value == null){
+						alert("Debe ingresar el nombre de la tarjeta");
+					} else {
+						btnAnadir.parentNode.removeChild(btnAnadir);
+					}
 				}
 			}
 		}
