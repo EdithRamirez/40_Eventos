@@ -8,6 +8,8 @@ function agregarLista(){
 	//Crea el elemento input con sus atributos
 	var inputNombre = document.createElement("input");
 	inputNombre.setAttribute("placeholder","Añadir lista...");
+	inputNombre.focus(); ///no funciona
+	
 	//Crea el elemento boton con sus atributos
 	var btnEnviar = document.createElement("button");
 	btnEnviar.setAttribute("type","button");
@@ -18,7 +20,7 @@ function agregarLista(){
 	divCaja.setAttribute("class","caja")
 	divCaja.appendChild(inputNombre);
 	divCaja.appendChild(btnEnviar);
-	// lista.appendChild(divCaja);
+
 
 	lista.insertBefore(divCaja,btnAgregar);
 
